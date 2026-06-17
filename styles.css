@@ -43,3 +43,33 @@ a{color:var(--accent);text-decoration:none}
 .form-status.ok{background:#0f2419;color:#7ff0b0}
 .form-status.err{background:#2a1414;color:#f3a3a3}
 .foot{padding:40px 0;text-align:center;color:var(--muted);border-top:1px solid var(--line);margin-top:40px}
+/* narrative / marketing sections */
+.section.alt{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.prose{max-width:680px;margin:0 auto}
+.prose p{font-size:1.08rem;margin:0 0 18px}
+.prose p.kicker{color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.82rem;margin-bottom:8px}
+.checklist{list-style:none;padding:0;max-width:680px;margin:0 auto}
+.checklist li{padding:10px 0 10px 30px;position:relative;font-size:1.06rem}
+.checklist li::before{content:"\2713";position:absolute;left:0;color:var(--accent);font-weight:700}
+.cols{display:grid;gap:22px;grid-template-columns:1fr;max-width:860px;margin:0 auto}
+@media(min-width:760px){.cols{grid-template-columns:1fr 1fr}}
+.col{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.col h3{margin:0 0 12px;font-size:1.15rem}
+.col ul{list-style:none;padding:0;margin:0}
+.col li{padding:6px 0 6px 24px;position:relative;color:var(--ink)}
+.col.for li::before{content:"\2713";position:absolute;left:0;color:var(--accent)}
+.col.not li::before{content:"\00d7";position:absolute;left:0;color:#f3a3a3;font-weight:700}
+.proof-grid{display:grid;gap:22px;grid-template-columns:1fr;max-width:900px;margin:0 auto 30px}
+@media(min-width:760px){.proof-grid{grid-template-columns:1fr 1fr}}
+.proof-shot{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.proof-shot img{display:block;width:100%;height:auto}
+.proof-shot .ph{display:flex;align-items:center;justify-content:center;min-height:200px;color:var(--muted);font-size:.9rem;text-align:center;padding:20px;border-bottom:1px dashed var(--line)}
+.proof-shot figcaption{padding:14px 18px;color:var(--muted);font-size:.92rem}
+.founding{max-width:720px;margin:0 auto;background:var(--panel);border:1px solid var(--accent);border-radius:var(--radius);padding:28px}
+.founding p{margin:0 0 14px;font-size:1.06rem}
+.founding p:last-child{margin-bottom:0}
+.faq{max-width:720px;margin:0 auto}
+.faq-item{padding:18px 0;border-bottom:1px solid var(--line)}
+.faq-item h3{margin:0 0 8px;font-size:1.08rem}
+.faq-item p{margin:0;color:var(--muted)}
+.cta-center{text-align:center;margin-top:30px}
