@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply — Get Launched 1-on-1 | Zero to Shipping</title>
+  <meta name="description" content="Apply for 1-on-1 mentorship. Limited seats. Tell me where you're starting and what you want to ship, and I'll be in touch to see if it's a fit." />
+  <meta name="theme-color" content="#080b09" />
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <h1>Apply for <span class="accent">Get Launched</span></h1>
+      <p class="lede">1-on-1 mentorship, strictly limited seats. Tell me where you're starting and what you want to ship. If it's a fit, I'll reach out to set up a call.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <form class="form-card" id="applyForm" novalidate>
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required />
+
+        <label for="background">Where are you starting? (your tech background)</label>
+        <textarea id="background" name="background" placeholder="Total beginner? Tried some tutorials? Tell me honestly."></textarea>
+
+        <label for="goal">What outcome do you want?</label>
+        <select id="goal" name="goal">
+          <option value="">Choose one</option>
+          <option>Get hired / change careers</option>
+          <option>Build something for myself</option>
+          <option>Build for my business</option>
+          <option>Other</option>
+        </select>
+
+        <label for="project">What do you want to ship?</label>
+        <textarea id="project" name="project" placeholder="The real project you want to walk away with."></textarea>
+
+        <label for="timeline">Timeline</label>
+        <select id="timeline" name="timeline">
+          <option value="">Choose one</option>
+          <option>Ready now</option>
+          <option>Within a month</option>
+          <option>Just exploring</option>
+        </select>
+
+        <label for="why">Why now, and why 1-on-1?</label>
+        <textarea id="why" name="why" placeholder="What's made this the right time to invest in getting it done with help?" required></textarea>
+
+        <!-- honeypot: bots fill this; humans never see it -->
+        <input class="hp" type="text" id="company_url" name="company_url" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        <button type="submit" class="btn btn-accent" id="submitBtn" style="margin-top:18px;width:100%">Submit application</button>
+        <p class="note">Seats are limited. I read every application personally.</p>
+        <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+      </form>
+      <p style="text-align:center;margin-top:18px"><a class="accent" href="index.html">&larr; Back to all programs</a></p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap">Zero to Shipping &middot; a TG6 program &middot; <a class="accent" href="mailto:dvelupr@proton.me">dvelupr@proton.me</a></div>
+  </footer>
+
+  <script>
+    // Paste the Apps Script /exec URL after deploying apps-script/Code.gs.
+    const ENDPOINT = "PASTE_APPS_SCRIPT_URL";
+
+    const form = document.getElementById("applyForm");
+    const btn = document.getElementById("submitBtn");
+    const status = document.getElementById("formStatus");
+
+    function showStatus(kind, html) {
+      status.className = "form-status show " + kind;
+      status.innerHTML = html;
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      status.className = "form-status";
+
+      // Honeypot: silently "succeed" for bots.
+      if (form.company_url.value) {
+        showStatus("ok", "Thanks — I'll be in touch.");
+        form.reset();
+        return;
+      }
+
+      if (!form.name.value.trim() || !form.email.value.trim() || !form.why.value.trim()) {
+        showStatus("err", "Please add your name, email, and why now.");
+        return;
+      }
+
+      if (ENDPOINT.startsWith("PASTE_")) {
+        showStatus("err",
+          "Applications aren't connected yet. Email me at " +
+          '<a class="accent" href="mailto:dvelupr@proton.me">dvelupr@proton.me</a>.');
+        return;
+      }
+
+      btn.disabled = true;
+      const original = btn.textContent;
+      btn.textContent = "Sending…";
+      try {
+        await fetch(ENDPOINT, { method: "POST", mode: "no-cors", body: new FormData(form) });
+        showStatus("ok", "Got it — thank you. I'll review and reach out if it's a fit.");
+        form.reset();
+      } catch (err) {
+        showStatus("err",
+          "Something went wrong. Please email me at " +
+          '<a class="accent" href="mailto:dvelupr@proton.me">dvelupr@proton.me</a>.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = original;
+      }
+    });
+  </script>
+</body>
+</html>
