@@ -2,7 +2,7 @@
  * Zero to Shipping — Tier 3 application backend (Google Apps Script).
  *
  * Receives a POST from apply.html, appends a row to the bound Google Sheet's
- * "Applications" tab, and emails a notification. Free, no server.
+ * "Applications" tab, and emails a notification. No server required.
  *
  * Setup: see apps-script/README.md. Short version:
  *   1. Create a Google Sheet -> Extensions -> Apps Script.
