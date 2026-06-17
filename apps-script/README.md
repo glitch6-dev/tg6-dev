@@ -17,3 +17,12 @@ emails a notification to `dvelupr@proton.me`.
 
 Open the `/exec` URL in a browser — you should see
 `{"ok":true,"service":"Zero to Shipping application endpoint"}`.
+
+## Known limitation
+
+Because `apply.html` posts with `mode: "no-cors"`, the browser receives an
+opaque response and cannot read whether the Apps Script call actually
+succeeded — so the form shows "thank you" even if the script erred (a crash,
+hit quota, or a misconfigured deployment). If an application is missing from
+the Sheet, check the Apps Script execution log directly (Apps Script editor →
+Executions) and confirm the deployment is live.
