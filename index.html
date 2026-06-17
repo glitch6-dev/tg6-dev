@@ -32,7 +32,7 @@
             <li>Zero to one real, deployed website</li>
             <li>Follow-along lessons, lifetime access</li>
           </ul>
-          <div class="cta"><a class="btn btn-ghost" href="#">Get the course</a></div>
+          <div class="cta"><a class="btn btn-ghost" href="#" data-checkout="1">Get the course</a></div>
         </article>
 
         <article class="tier featured" data-tier="2">
@@ -46,7 +46,7 @@
             <li>Feedback on the projects you build</li>
             <li>Group coaching calls</li>
           </ul>
-          <div class="cta"><a class="btn btn-accent" href="#">Join Ship It</a></div>
+          <div class="cta"><a class="btn btn-accent" href="#" data-checkout="2">Join Ship It</a></div>
         </article>
 
         <article class="tier" data-tier="3">
@@ -60,7 +60,7 @@
             <li>We build &amp; ship your real project together</li>
             <li>Strictly limited seats</li>
           </ul>
-          <div class="cta"><a class="btn btn-accent" href="#">Apply now</a></div>
+          <div class="cta"><a class="btn btn-accent" href="apply.html">Apply now</a><span class="note">By application. Limited seats.</span></div>
         </article>
 
       </div>
@@ -70,5 +70,27 @@
   <footer class="foot">
     <div class="wrap">Zero to Shipping &middot; a TG6 program &middot; <a class="accent" href="mailto:dvelupr@proton.me">dvelupr@proton.me</a></div>
   </footer>
+
+  <script>
+    // ── Stripe Payment Links ───────────────────────────────────────────
+    // Paste the live Stripe Payment Link for each tier once Cards are
+    // activated in the Stripe dashboard. Leave as PASTE_STRIPE_LINK until then.
+    const TIER1_CHECKOUT_URL = "PASTE_STRIPE_LINK";
+    const TIER2_CHECKOUT_URL = "PASTE_STRIPE_LINK";
+    // ───────────────────────────────────────────────────────────────────
+    const LINKS = { "1": TIER1_CHECKOUT_URL, "2": TIER2_CHECKOUT_URL };
+
+    document.querySelectorAll("[data-checkout]").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        const url = LINKS[el.getAttribute("data-checkout")];
+        if (!url || url === "PASTE_STRIPE_LINK") {
+          alert("Checkout opens soon — reach me at dvelupr@proton.me to grab a spot now.");
+          return;
+        }
+        window.location.href = url;
+      });
+    });
+  </script>
 </body>
 </html>
