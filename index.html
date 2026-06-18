@@ -258,10 +258,11 @@
 
   <script>
     // ── Stripe Payment Links ───────────────────────────────────────────
-    // Paste the live Stripe Payment Link for each tier once Cards are
-    // activated in the Stripe dashboard. Leave as PASTE_STRIPE_LINK until then.
-    const TIER1_CHECKOUT_URL = "PASTE_STRIPE_LINK";
-    const TIER2_CHECKOUT_URL = "PASTE_STRIPE_LINK";
+    // SANDBOX (test mode) links — checkout is fully functional with Stripe
+    // test cards (e.g. 4242 4242 4242 4242). Swap both for the live Payment
+    // Links once Cards are activated on the real domain.
+    const TIER1_CHECKOUT_URL = "https://buy.stripe.com/test_8x200j8JX4ke2JI0G004803";
+    const TIER2_CHECKOUT_URL = "https://buy.stripe.com/test_fZu3cvd0d9Eycki3Sc04804";
     // ───────────────────────────────────────────────────────────────────
     const LINKS = { "1": TIER1_CHECKOUT_URL, "2": TIER2_CHECKOUT_URL };
 
