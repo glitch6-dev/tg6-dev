@@ -12,14 +12,14 @@
   flex: 1;
   height: 10px;
   border-radius: 999px;
-  background: #0b100e;
+  background: var(--panel);
   border: 1px solid var(--line);
   overflow: hidden;
 }
 .progress .fill {
   height: 100%;
   width: 0;
-  background: var(--accent);
+  background: var(--grad);
   border-radius: 999px;
   transition: width 0.4s ease;
 }
@@ -65,7 +65,7 @@
 .module .num {
   font-family: var(--mono);
   font-size: 0.82rem;
-  color: var(--accent);
+  color: var(--cyan);
 }
 .module h2 {
   font-size: 1.2rem;
@@ -92,8 +92,8 @@
   transition: border-color 0.15s ease, background 0.15s ease;
 }
 .lesson-row:hover {
-  background: #0b100e;
-  border-color: var(--line);
+  background: var(--panel);
+  border-color: var(--accent);
 }
 .lesson-row .tick {
   flex: none;
@@ -150,9 +150,13 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin: 16px 6px 6px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
 }
 .toc .toc-mod:first-child {
   margin-top: 4px;
+  border-top: none;
+  padding-top: 0;
 }
 .toc a {
   display: flex;
@@ -164,10 +168,10 @@
   font-size: 0.92rem;
 }
 .toc a:hover {
-  background: #0b100e;
+  background: var(--panel);
 }
 .toc a.current {
-  background: rgba(55, 214, 122, 0.12);
+  background: rgba(52, 211, 153, 0.12);
   color: var(--accent);
 }
 .toc a .dot {
@@ -206,7 +210,7 @@
   width: 100%;
   border-radius: var(--radius);
   border: 1px dashed var(--line);
-  background: #0b100e;
+  background: var(--panel);
   display: grid;
   place-items: center;
   color: var(--muted);
@@ -221,7 +225,7 @@
   margin: 0 0 16px;
 }
 .lesson-body pre {
-  background: #0b100e;
+  background: var(--panel);
   border: 1px solid var(--line);
   border-left: 3px solid var(--accent);
   border-radius: 10px;
@@ -234,7 +238,7 @@
   font-size: 0.92rem;
 }
 .lesson-body p code {
-  background: #0b100e;
+  background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 6px;
   padding: 1px 6px;
@@ -244,7 +248,7 @@
   color: var(--ink);
 }
 .lesson-body .draft {
-  background: #0b100e;
+  background: var(--panel);
   border: 1px solid var(--line);
   border-left: 3px solid var(--accent);
   border-radius: 10px;
