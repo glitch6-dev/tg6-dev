@@ -17,10 +17,21 @@ def test_title_has_brand():
 
 
 def test_hero_promise_present():
-    html = read("index.html")
-    # The core promise: ship a real, deployed project using AI
-    assert "ship" in html.lower()
-    assert "deployed" in html.lower() or "real project" in html.lower()
+    html = read("index.html").lower()
+    # The core promise: go from a browser chat to shipping with Claude Code
+    assert "ship" in html
+    assert "claude code" in html
+    assert "chat" in html
+
+
+def test_claude_code_named_on_landing():
+    html = read("index.html").lower()
+    assert "claude code" in html, "the ladder must name Claude Code"
+
+
+def test_no_automation_language():
+    html = read("index.html").lower()
+    assert "automation" not in html, "automation framing was removed in the AI-training pivot"
 
 
 def test_no_free_tier_language():
