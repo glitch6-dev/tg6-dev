@@ -1,0 +1,298 @@
+/* Zero to Shipping — course platform layout.
+ * Reuses tokens + components from ../styles.css; only adds platform-specific UI.
+ */
+
+/* ---- shared progress bar ---- */
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.progress .track {
+  flex: 1;
+  height: 10px;
+  border-radius: 999px;
+  background: #0b100e;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.progress .fill {
+  height: 100%;
+  width: 0;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+.progress .label {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* ---- dashboard ---- */
+.dash-head {
+  padding: 48px 0 24px;
+}
+.dash-head .eyebrow {
+  margin-bottom: 10px;
+}
+.dash-head h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+}
+.dash-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.module {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  margin-bottom: 18px;
+}
+.module > header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.module .num {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--accent);
+}
+.module h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+.module .summary {
+  color: var(--muted);
+  margin: 0 0 16px;
+  font-size: 0.96rem;
+}
+.lesson-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.lesson-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  color: var(--ink);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.lesson-row:hover {
+  background: #0b100e;
+  border-color: var(--line);
+}
+.lesson-row .tick {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+  display: grid;
+  place-items: center;
+  color: transparent;
+}
+.lesson-row.done .tick {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #04130a;
+}
+.lesson-row .l-title {
+  flex: 1;
+  font-weight: 500;
+}
+.lesson-row .l-dur {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* ---- lesson reader ---- */
+.reader {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  padding: 28px 0 60px;
+  align-items: start;
+}
+@media (min-width: 920px) {
+  .reader {
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+  }
+}
+
+.toc {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px;
+  position: sticky;
+  top: 84px;
+}
+.toc .toc-mod {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 16px 6px 6px;
+}
+.toc .toc-mod:first-child {
+  margin-top: 4px;
+}
+.toc a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: var(--ink);
+  font-size: 0.92rem;
+}
+.toc a:hover {
+  background: #0b100e;
+}
+.toc a.current {
+  background: rgba(55, 214, 122, 0.12);
+  color: var(--accent);
+}
+.toc a .dot {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+}
+.toc a.done .dot {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.lesson-main {
+  min-width: 0;
+}
+.lesson-main .crumb {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.lesson-main h1 {
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+}
+.lesson-main .objective {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 0 0 24px;
+}
+.video-ph {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px dashed var(--line);
+  background: #0b100e;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 26px;
+}
+.lesson-body {
+  max-width: 680px;
+}
+.lesson-body p {
+  font-size: 1.06rem;
+  margin: 0 0 16px;
+}
+.lesson-body pre {
+  background: #0b100e;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  padding: 14px 16px;
+  overflow-x: auto;
+  margin: 0 0 18px;
+}
+.lesson-body code {
+  font-family: var(--mono);
+  font-size: 0.92rem;
+}
+.lesson-body p code {
+  background: #0b100e;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1px 6px;
+  font-size: 0.88rem;
+}
+.lesson-body pre code {
+  color: var(--ink);
+}
+.lesson-body .draft {
+  background: #0b100e;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  padding: 16px 18px;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.tasks {
+  margin: 30px 0;
+  max-width: 680px;
+}
+.tasks h3 {
+  font-size: 1.05rem;
+  margin: 0 0 12px;
+}
+.tasks ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.tasks li {
+  padding: 9px 0 9px 30px;
+  position: relative;
+  color: var(--ink);
+}
+.tasks li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.lesson-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.lesson-nav .spacer {
+  flex: 1;
+}
+.btn[disabled] {
+  opacity: 0.4;
+  pointer-events: none;
+}

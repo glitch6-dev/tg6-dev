@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesson | Zero to Shipping</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#080b09" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="course.css" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="i-check"><path d="M20 6 9 17l-5-5"/></g>
+      <g id="i-arrow-l"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></g>
+      <g id="i-arrow-r"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></g>
+    </defs>
+  </svg>
+
+  <!-- AUTH/ACCESS GATE GOES HERE (future) — see course/index.html note. -->
+
+  <nav class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html" aria-label="Course home">
+        <img src="../assets/logo.svg" width="28" height="28" alt="" />
+        <span>Zero to <b>Shipping</b></span>
+      </a>
+      <a class="btn btn-ghost nav-cta" href="index.html">All lessons</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <div class="reader">
+      <aside class="toc" id="toc" aria-label="Course contents"></aside>
+
+      <article class="lesson-main" id="main">
+        <!-- rendered by script -->
+      </article>
+    </div>
+  </main>
+
+  <script src="curriculum.js"></script>
+  <script src="progress.js"></script>
+  <script>
+    (function () {
+      // flat list of lessons with their module, for prev/next + lookup
+      var flat = [];
+      CURRICULUM.forEach(function (m) {
+        m.lessons.forEach(function (l) {
+          flat.push({ module: m, lesson: l });
+        });
+      });
+
+      function param(name) {
+        return new URLSearchParams(location.search).get(name);
+      }
+
+      var id = param("id");
+      var idx = flat.findIndex(function (f) {
+        return f.lesson.id === id;
+      });
+      if (idx === -1) idx = 0;
+      var entry = flat[idx];
+      var lesson = entry.lesson;
+      var module = entry.module;
+
+      Progress.setLast(lesson.id);
+
+      // ---- table of contents ----
+      var toc = document.getElementById("toc");
+      CURRICULUM.forEach(function (m) {
+        var label = document.createElement("div");
+        label.className = "toc-mod";
+        label.textContent = "Module " + m.module + " · " + m.title;
+        toc.appendChild(label);
+        m.lessons.forEach(function (l) {
+          var a = document.createElement("a");
+          a.href = "lesson.html?id=" + encodeURIComponent(l.id);
+          if (l.id === lesson.id) a.className = "current";
+          if (Progress.isComplete(l.id)) a.className += " done";
+          a.innerHTML = '<span class="dot"></span><span></span>';
+          a.querySelector("span:last-child").textContent = l.title;
+          toc.appendChild(a);
+        });
+      });
+
+      // ---- main lesson ----
+      var main = document.getElementById("main");
+      document.title = lesson.title + " | Zero to Shipping";
+
+      var tasksHtml = "";
+      if (lesson.tasks && lesson.tasks.length) {
+        tasksHtml =
+          '<section class="tasks"><h3>Do this</h3><ul>' +
+          lesson.tasks
+            .map(function (t) {
+              var li = document.createElement("li");
+              li.textContent = t;
+              return li.outerHTML;
+            })
+            .join("") +
+          "</ul></section>";
+      }
+
+      var bodyHtml =
+        lesson.body ||
+        '<div class="draft">Lesson content is being written. The objective and tasks below are the real plan for this lesson — the walkthrough lands here.</div>';
+
+      var crumb = document.createElement("div");
+      crumb.className = "crumb";
+      crumb.textContent = "Module " + module.module + " · " + module.title;
+
+      main.appendChild(crumb);
+
+      var h1 = document.createElement("h1");
+      h1.textContent = lesson.title;
+      main.appendChild(h1);
+
+      var obj = document.createElement("p");
+      obj.className = "objective";
+      obj.textContent = lesson.objective;
+      main.appendChild(obj);
+
+      var video = document.createElement("div");
+      video.className = "video-ph";
+      video.textContent = "Lesson video — " + lesson.duration;
+      main.appendChild(video);
+
+      var body = document.createElement("div");
+      body.className = "lesson-body";
+      body.innerHTML = bodyHtml;
+      main.appendChild(body);
+
+      main.insertAdjacentHTML("beforeend", tasksHtml);
+
+      // ---- nav + mark complete ----
+      var nav = document.createElement("div");
+      nav.className = "lesson-nav";
+
+      var prev = flat[idx - 1];
+      var next = flat[idx + 1];
+
+      var prevBtn = document.createElement("a");
+      prevBtn.className = "btn btn-ghost";
+      prevBtn.innerHTML = '<svg class="ico" width="16" height="16" style="vertical-align:-3px"><use href="#i-arrow-l"/></svg> Prev';
+      if (prev) prevBtn.href = "lesson.html?id=" + encodeURIComponent(prev.lesson.id);
+      else prevBtn.setAttribute("disabled", "");
+      nav.appendChild(prevBtn);
+
+      var spacer = document.createElement("div");
+      spacer.className = "spacer";
+      nav.appendChild(spacer);
+
+      var completeBtn = document.createElement("button");
+      completeBtn.className = "btn";
+      function paintComplete() {
+        var done = Progress.isComplete(lesson.id);
+        completeBtn.className = "btn " + (done ? "btn-accent" : "btn-ghost");
+        completeBtn.innerHTML = done
+          ? '<svg class="ico" width="16" height="16" style="vertical-align:-3px"><use href="#i-check"/></svg> Completed'
+          : "Mark complete";
+        // reflect in the TOC dot for this lesson
+        var link = toc.querySelector('a.current');
+        if (link) link.className = "current" + (done ? " done" : "");
+      }
+      completeBtn.addEventListener("click", function () {
+        Progress.toggle(lesson.id);
+        paintComplete();
+      });
+      paintComplete();
+      nav.appendChild(completeBtn);
+
+      var nextBtn = document.createElement("a");
+      nextBtn.className = "btn btn-accent";
+      nextBtn.innerHTML = 'Next <svg class="ico" width="16" height="16" style="vertical-align:-3px"><use href="#i-arrow-r"/></svg>';
+      if (next) nextBtn.href = "lesson.html?id=" + encodeURIComponent(next.lesson.id);
+      else {
+        nextBtn.href = "index.html";
+        nextBtn.innerHTML = "Back to dashboard";
+      }
+      nav.appendChild(nextBtn);
+
+      main.appendChild(nav);
+    })();
+  </script>
+</body>
+</html>
