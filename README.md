@@ -1,6 +1,6 @@
 # Zero to Shipping — course sales site
 
-Static three-tier sales site for the *Zero to Shipping* course program.
+Static three-tier sales site for the *Zero to Shipping* program — learn to drive AI, from your first browser chat to building and shipping real things with Claude Code.
 
 - `index.html` — landing + pricing (Build It $49 / Ship It $499 / Get Launched $2,999)
 - `apply.html` — Tier 3 application form (posts to Apps Script)

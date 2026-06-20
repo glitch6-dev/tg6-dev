@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your course | Zero to Shipping</title>
+  <meta name="description" content="Your Zero to Shipping course dashboard." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#080b09" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="course.css" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+</head>
+<body>
+  <!-- icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="i-check"><path d="M20 6 9 17l-5-5"/></g>
+    </defs>
+  </svg>
+
+  <!--
+    AUTH/ACCESS GATE GOES HERE (future):
+    When Stripe + login land, verify the buyer is entitled to "Build It" before
+    rendering. For now the course is open — progress is local-only.
+  -->
+
+  <nav class="nav">
+    <div class="wrap">
+      <a class="logo" href="../index.html" aria-label="Zero to Shipping home">
+        <img src="../assets/logo.svg" width="28" height="28" alt="" />
+        <span>Zero to <b>Shipping</b></span>
+      </a>
+      <a class="btn btn-ghost nav-cta" href="../index.html">Sales site</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <header class="dash-head">
+      <p class="eyebrow">Build It — self-paced course</p>
+      <h1>From your first chat to shipping with Claude Code.</h1>
+      <div class="progress">
+        <div class="track"><div class="fill" id="fill"></div></div>
+        <span class="label" id="plabel">0 / 0 lessons</span>
+      </div>
+      <div class="dash-actions">
+        <a class="btn btn-accent" id="continue" href="#">Start the course</a>
+      </div>
+    </header>
+
+    <section id="modules"></section>
+
+    <footer class="foot">
+      Zero to Shipping — learn to drive AI, then ship something real with it.
+    </footer>
+  </main>
+
+  <script src="curriculum.js"></script>
+  <script src="progress.js"></script>
+  <script>
+    (function () {
+      var modulesEl = document.getElementById("modules");
+
+      function lessonRow(lesson) {
+        var done = Progress.isComplete(lesson.id);
+        var a = document.createElement("a");
+        a.className = "lesson-row" + (done ? " done" : "");
+        a.href = "lesson.html?id=" + encodeURIComponent(lesson.id);
+        a.innerHTML =
+          '<span class="tick"><svg class="ico" width="13" height="13"><use href="#i-check"/></svg></span>' +
+          '<span class="l-title"></span>' +
+          '<span class="l-dur"></span>';
+        a.querySelector(".l-title").textContent = lesson.title;
+        a.querySelector(".l-dur").textContent = lesson.duration;
+        return a;
+      }
+
+      CURRICULUM.forEach(function (m) {
+        var sec = document.createElement("section");
+        sec.className = "module";
+        var head = document.createElement("header");
+        head.innerHTML = '<span class="num"></span><h2></h2>';
+        head.querySelector(".num").textContent =
+          "Module " + m.module;
+        head.querySelector("h2").textContent = m.title;
+        sec.appendChild(head);
+        var sum = document.createElement("p");
+        sum.className = "summary";
+        sum.textContent = m.summary;
+        sec.appendChild(sum);
+        var ul = document.createElement("ul");
+        ul.className = "lesson-list";
+        m.lessons.forEach(function (l) {
+          var li = document.createElement("li");
+          li.appendChild(lessonRow(l));
+          ul.appendChild(li);
+        });
+        sec.appendChild(ul);
+        modulesEl.appendChild(sec);
+      });
+
+      // progress bar
+      var s = Progress.summary();
+      document.getElementById("fill").style.width = s.percent + "%";
+      document.getElementById("plabel").textContent =
+        s.done + " / " + s.total + " lessons · " + s.percent + "%";
+
+      // continue button
+      var cont = document.getElementById("continue");
+      var last = Progress.getLast();
+      var target = last || Progress.nextUnfinished() || Progress.firstId();
+      if (target) cont.href = "lesson.html?id=" + encodeURIComponent(target);
+      if (s.done > 0 && s.done < s.total) cont.textContent = "Continue where you left off";
+      else if (s.done === s.total && s.total > 0) cont.textContent = "Review the course";
+    })();
+  </script>
+</body>
+</html>

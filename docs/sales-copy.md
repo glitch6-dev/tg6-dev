@@ -8,77 +8,92 @@
 
 ## Hero
 
+**Eyebrow:** // built by a developer who ships paid work with AI every day
+
 **Headline (primary):**
-You don't need another tutorial. You need to ship something real.
+You don't need to learn to code. You need to learn to drive AI.
 
 **Subhead:**
-I'm a self-taught developer who gets paid to build websites and software right now. I'll walk you from a blank screen to a real project, live on the internet, that you can show an employer, a client, or your own mom.
+I'll take you from your very first chat message to building and shipping real things with Claude Code. Same ladder for everyone — you just climb on at your level.
 
-**Button:** Show me the programs
+**Buttons:** See the programs / See real work
 
-*Alternate headlines to A/B test later:*
-- Stop collecting courses. Start shipping projects.
-- Six months of tutorials. Still nothing built. Let's fix that.
+**Trust strip:**
+- Start from your first chat
+- Climb to Claude Code
+- Ship one real thing
 
 ---
 
 ## The problem (agitate)
 
-You've watched the videos. You followed along, the code worked, you felt like you got it.
+**Section heading:** The AI gap
 
-Then you opened a blank editor to build something yourself and froze.
+You have AI now. Everyone does. You opened ChatGPT or Claude, typed a question, got something half-useful, and quietly decided the hype was overblown.
 
-That gap has a name. Tutorials teach you to copy. They never teach you to start from nothing and finish. So you buy another course, tell yourself this one is different, and six months later you still have no project, no portfolio, and no proof you can actually build.
+It wasn't. The tool is real. The gap is that nobody showed you how to actually drive it.
 
-Employers don't hire people who finished courses. They hire people who shipped things.
+So you keep using it for trivia and one-liners while other people are getting real work out of the same screen — drafting, planning, building, shipping. The difference isn't the AI. It's that they learned to steer it and you were left to guess.
+
+The people who pull ahead this decade won't be the ones who can code. They'll be the ones who can make AI do the work.
 
 ---
 
 ## What you walk away with
 
-By the end, you have a real website, deployed to a real web address, built by you. Not a clone of my screen. Your project, your code, live where anyone can visit it.
+**Section heading:** What you walk away with
 
-You'll know how to:
+**Subhead:** The skill to make AI work for you — from a browser chat to Claude Code — and one real thing you shipped with it.
 
-- Take an idea and break it down until it's buildable
-- Use AI the way working developers actually use it, as a co-pilot that speeds you up instead of a crutch that leaves you helpless
-- Get unstuck on your own when something breaks
-- Put your work online so it counts as proof
+**Features:**
 
-You finish with a link you can paste into a job application. That link does more than a certificate ever will.
+**Talk to AI so it actually helps**
+Get real, usable output from a browser chat instead of vague mush — the way power users do it.
+
+**Make AI yours**
+Projects, custom instructions, and feeding it your own files so it works on your stuff, not generic answers.
+
+**Get unstuck when AI is wrong**
+Spot when AI is confidently wrong, and know how to steer it back instead of giving up.
+
+**Ship it with Claude Code**
+Step up from chat to Claude Code and put a real, working thing live on the internet.
+
+You finish able to use AI like the people pulling ahead — and with a real thing you shipped to prove it.
 
 ---
 
 ## Who this is for
 
-- Career-changers who need a portfolio that proves they can build
-- Self-taught beginners who keep starting and never finishing
-- People who own a small business and are tired of paying thousands for a website they could build themselves
+**Section heading:** Is this you?
 
-## Who this is not for
+**Built for you if:**
+- You feel behind on AI and want to actually get good at it, fast
+- You already use ChatGPT or Claude for basic stuff and want to go much further
+- You're not a coder but you want AI to help you build and ship real things
 
-- Anyone looking for a quick certificate to frame on a wall
-- People who want to watch, not build
-- Developers who already ship production code
-
-If you want to be entertained, this isn't it. If you want to finish something, keep reading.
+**Not for you if:**
+- You want to watch, not do the reps
+- You're looking for a certificate to frame on a wall
+- You already live in Claude Code and ship daily
 
 ---
 
 ## Proof
 
-I teach this because I do it. Here's the work, not the talk.
+**Section heading:** I teach this because I do it
 
-**[SCREENSHOT: the live TG6-dev / DigitalServices site]**
-Caption: A site I designed, built, and run. Real contact form, real backend, live today at [your URL].
+**Subhead:** Here's the work, not the talk. Real sites I designed, built, and run.
+
+**[SCREENSHOT: the live TG6-dev / DigitalServices site — tg6.dev]**
+Caption: A site I designed, built, and run, with a live contact form and backend.
 
 **[SCREENSHOT: the IRL stream storefront]**
 Caption: A full product storefront I built end to end, from layout to checkout flow.
 
-**Clients who paid me to build, not to teach:**
+**// clients who paid me to build, not to teach**
 
-- A local business owner hired me to design and build their website. They paid same-day on delivery. [Add the live URL or a screenshot once you have permission.]
-- Another client paid $500 in full for an SEO build. [Add the result or a before/after once it lands.]
+I use these exact tools — browser chat to Claude Code — to ship paid client work right now. A local business owner hired me to design and build their website and paid the same day I delivered. Another client paid in full for an SEO build. I do this work for money with AI, which is why I can teach you to do it for real.
 
 > Honesty note for you, the operator: only publish a client's name, logo, or
 > quote after they say yes. A real first name and city ("Kelly, Fresno") with
@@ -93,69 +108,80 @@ Caption: A full product storefront I built end to end, from layout to checkout f
 
 ## Founding students (use this until you have testimonials)
 
-I'm taking my first small group of founding students. You get a lower price and more of my time. In exchange, you let me document what you build and, if you're happy, say so on the record.
+I'm taking my first small group of founding students. You get a lower price and more of my time. In exchange, you let me document what you build and, if you're happy with it, say so on the record.
 
-That's the trade. You get more help and pay less. I get my first case studies. We both win because the work is real.
+That's the trade. You get more help and pay less. I get my first case studies. We both come out ahead because the work is real.
 
-Founding seats are limited and the price goes up after they're gone.
+Founding seats are limited, and the price goes up once they're gone.
 
 ---
 
 ## The programs (tier copy)
 
-### Build It — $49
-For the person who learns best alone and just needs the map.
+**Section heading:** Pick how far you want to go
 
-The full self-paced course. You go from zero to one deployed website at your own speed, with lifetime access. No calls, no community. Just you, the lessons, and a finished project at the end.
+**Subhead:** Same finish line, a real project you shipped. The difference is how much help you want getting there.
+
+### Build It — $49
+
+Do it yourself, at your own pace.
+
+- The full self-paced ladder, chat to Claude Code
+- Ship one real thing with AI by the end
+- Follow-along lessons, lifetime access
 
 **Button:** Get the course
 
 ### Ship It — $499
-For the person who's tired of getting stuck alone.
 
-Everything in Build It, plus a second project (an AI automation you build yourself), starter files so you move faster, a private Discord where you ask me and other builders questions, feedback on the actual project you're making, and group coaching calls.
+Everything in Build It, plus real help so you never get stuck alone.
 
-The difference between $49 and this is simple. At $49 you're on your own. Here, you're not. Most people who quit a course quit because they hit one wall and nobody was there. This is me being there.
+- A prompt & project-setup pack you can reuse
+- Private Discord community access
+- Feedback on what you build
+- Group coaching calls
 
 **Button:** Join Ship It
 
 ### Get Launched — $2,999
-For the person who wants it done, with me in their corner.
 
-One on one. We talk every week. I build a personal roadmap around your goal, and I help you ship a real project, your portfolio piece or your own business's site, with my hands on it alongside yours.
+1-on-1. We use Claude Code together to build and ship your real thing.
 
-This isn't a course you watch. It's me working with you until the thing is live. Seats are strictly limited because my weeks are. Apply, we'll talk, and if it's a fit, we start.
+- Direct 1-on-1 mentorship with me
+- A personalized roadmap
+- Weekly private calls
+- We build & ship your project with Claude Code, together
+- Strictly limited seats
 
-**Button:** Apply now
+**Button:** Apply now (by application — limited seats)
 
 ---
 
 ## Objections (short FAQ)
 
-**I'm a total beginner. Will I be lost?**
-That's who this is built for. We start at zero. If you can use a web browser, you can start.
+**Section heading:** Questions you're already asking
 
-**Do I need to be good at math?**
-No. Building websites is not math. It's breaking a problem into small pieces and solving them one at a time. I teach you exactly how.
+**Is this just ChatGPT tips?**
+No. Prompting is module one. The whole point is the climb: from a browser chat all the way to Claude Code building and shipping real things with you.
 
-**Isn't everything free on YouTube?**
-The information is. The path isn't. YouTube hands you ten thousand videos and no order. You've tried that. How's the project coming? You're not paying me for facts. You're paying for the line from nothing to shipped, and for not quitting halfway.
+**Do I need to be technical to use Claude Code?**
+No. That's the entire reason this exists. We start at your first chat message and build up to it step by step. If you can use a web browser, you can start.
 
-**What if I get stuck?**
-On Build It, you have the lessons. On Ship It, you have me and the Discord. On Get Launched, you have me on a call. Pick the level of help you want.
+**Will AI just do it for me so I learn nothing?**
+The opposite. You learn to steer it, check it, and fix it when it's wrong. Driving AI well is the skill — and it's the one that pays.
 
-**Is this just AI writing my code for me?**
-No. AI is your co-pilot, and you learn to fly. You'll understand what you ship, because understanding it is the skill that gets you hired.
+**Isn't all of this free on YouTube?**
+The tips are. The path isn't. YouTube hands you ten thousand videos and no order. You're paying for the line from your first chat to a shipped thing, and for not quitting halfway.
 
-**Can I really put this on a resume?**
-That's the whole point. You finish with a live link and the ability to explain how you built it. That's what an interview is.
+**Can I really use this for my job or business?**
+That's the point. You finish able to put AI to work on real tasks, and with one real thing you shipped to show for it.
 
 ---
 
 ## Final CTA
 
-Six months from now you'll either have a project you shipped or another course you didn't finish.
+**Section heading:** Six months from now
 
-You already know which feeling you're tired of.
+You'll either be the person who learned to drive AI and shipped something, or the one still typing lazy prompts and calling it hype. You already know which you're tired of being.
 
 **Button:** Pick your program
