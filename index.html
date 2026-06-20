@@ -44,10 +44,10 @@
   <header class="hero-split" id="top">
     <div class="wrap">
       <div class="grid">
-        <div class="hero-copy reveal">
+        <div class="reveal">
           <p class="eyebrow">// built by a developer who ships paid work with AI every day</p>
           <h1 class="glitch">You don't need to learn to code. <span class="accent">You need to learn to drive AI.</span></h1>
-          <p>From your first chat to Claude Code. One real thing shipped by the end.</p>
+          <p class="lede">From your first chat to Claude Code. One real thing shipped by the end.</p>
           <div class="hero-actions">
             <a class="btn btn-accent btn-lg" href="#pricing">See the programs</a>
             <a class="btn btn-ghost btn-lg" href="#proof">See real work</a>
@@ -226,7 +226,7 @@
   <section class="section cta-band">
     <img class="bgimg" src="assets/ship-rocket.webp" alt="" aria-hidden="true" loading="lazy" />
     <div class="scrim"></div>
-    <div class="wrap cta-center">
+    <div class="wrap">
       <h2 class="reveal">Six months from now</h2>
       <p class="reveal">You'll either be the person who learned to drive AI and shipped something — or the one still calling it hype. You already know which you're tired of being.</p>
       <div class="cta-center reveal"><a class="btn btn-accent btn-lg" href="#pricing">Pick your program</a></div>
@@ -287,6 +287,7 @@
         const btn = e.target.closest(".finder-tile");
         if (!btn) return;
         const rec = REC[btn.getAttribute("data-level")];
+        if (!rec) return;
         tilesWrap.querySelectorAll(".finder-tile").forEach((t) => t.classList.toggle("is-active", t === btn));
         lineEl.innerHTML = rec.line + '<span class="caret">_</span>';
         tiersWrap.classList.add("has-pick");
