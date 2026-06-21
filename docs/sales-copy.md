@@ -1,4 +1,4 @@
-# Zero to Shipping — Sales Page Copy
+# TG6-Dev · AI Training — Sales Page Copy
 
 > Drop-in copy for index.html. Anything in [BRACKETS] is a real asset YOU supply
 > (a screenshot, a real quote, a real number). Never invent these. If you don't

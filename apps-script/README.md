@@ -16,7 +16,7 @@ emails a notification to `dvelupr@proton.me`.
 5. Paste that URL into the `ENDPOINT` constant in `../apply.html`.
 
 Open the `/exec` URL in a browser — you should see
-`{"ok":true,"service":"Zero to Shipping application endpoint"}`.
+`{"ok":true,"service":"TG6-Dev · AI Training application endpoint"}`.
 
 ## Known limitation
 

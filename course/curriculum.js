@@ -1,4 +1,4 @@
-/* Zero to Shipping — course curriculum (single source of truth).
+/* TG6-Dev · AI Training — course curriculum (single source of truth).
  *
  * Both index.html (dashboard) and lesson.html render from this array.
  * Lesson bodies are intentionally scaffolded — drop the real teaching content

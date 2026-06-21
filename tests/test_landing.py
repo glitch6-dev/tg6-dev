@@ -13,7 +13,8 @@ def test_index_exists():
 
 def test_title_has_brand():
     html = read("index.html")
-    assert "Zero to Shipping" in html, "page title/brand must say Zero to Shipping"
+    assert "TG6-Dev" in html, "page title/brand must say TG6-Dev"
+    assert "AI Training" in html, "page brand must say AI Training"
 
 
 def test_hero_promise_present():

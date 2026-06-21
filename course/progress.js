@@ -1,4 +1,4 @@
-/* Zero to Shipping — progress tracking.
+/* TG6-Dev · AI Training — progress tracking.
  *
  * Local-only for now: completed lesson IDs live in localStorage. When auth +
  * Stripe gating land, swap this module's storage for a per-user backend call;
