@@ -125,6 +125,7 @@ main,header,footer{position:relative;z-index:2}
 .hero-art{position:relative}
 .hero-art img{width:100%;height:auto;display:block;border-radius:18px;border:1px solid var(--line);box-shadow:0 30px 80px -30px rgba(0,0,0,.8)}
 .hero-art::after{content:"";position:absolute;inset:-2px;border-radius:20px;background:radial-gradient(60% 60% at 70% 30%,rgba(52,211,153,.22),transparent 70%);z-index:-1;filter:blur(20px)}
+.art-ph{display:flex;align-items:center;justify-content:center;min-height:300px;border:1px dashed var(--line);border-radius:18px;background:var(--panel);color:var(--muted);font-size:.8rem;letter-spacing:1px;text-align:center;line-height:1.7;padding:24px}
 .hero-stats{display:flex;gap:36px;margin-top:36px}
 .hero-stats dt{font-family:var(--mono);font-size:26px;color:var(--accent)}
 .hero-stats dd{font-size:13px;color:var(--muted);letter-spacing:2px}
@@ -241,7 +242,7 @@ details.qa .qa-body strong{color:var(--text)}
 .faq-item p{margin:0;color:var(--muted)}
 
 /* ============ CTA BAND ============ */
-.cta-band{position:relative;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cta-band{position:relative;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:radial-gradient(700px 300px at 80% 0%,#34d39912,transparent 70%),var(--panel)}
 .cta-band .wrap{position:relative}
 .cta-band h2{font-size:clamp(1.8rem,4vw,2.6rem)}
 .cta-center{text-align:center;margin-top:30px}

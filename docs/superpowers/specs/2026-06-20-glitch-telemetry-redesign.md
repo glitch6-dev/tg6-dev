@@ -60,7 +60,8 @@ existing reveal + checkout `<script>`. Sections, top to bottom:
 1. **Nav** — wordmark/logo + `● READY` status dot + "Start now" gradient CTA; sticky,
    blurs on scroll.
 2. **Hero (split)** — `// BUILT BY A DEV WHO SHIPS PAID WORK WITH AI` kicker →
-   `h1.glitch` (e.g. "Stop typing prompts. **Start shipping.**") → primary CTA →
+   `h1.glitch` keeping the **existing headline verbatim**: "You don't need to learn
+   to code. <span class="accent">You need to learn to drive AI.</span>" → primary CTA →
    telemetry `<dl>` stats: `01 · YOUR FIRST CHAT`, `→ CLAUDE CODE`, `1 · THING SHIPPED`.
    Keep `hero-dev.webp` art.
 3. **The AI gap** — kicker + 3–4 one-liners (was ~5 paragraphs). ~80% less text.

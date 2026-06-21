@@ -7,12 +7,43 @@
   <meta name="description" content="A developer who ships paid client work with AI teaches you to drive it — from your first browser chat to building and shipping real things with Claude Code. Three programs, self-paced to 1-on-1." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#07060c" />
+
+  <!-- Canonical + social. REPLACE_WITH_DOMAIN is swapped at go-live (see README). -->
+  <link rel="canonical" href="https://REPLACE_WITH_DOMAIN/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Zero to Shipping" />
+  <meta property="og:title" content="Zero to Shipping — Learn to drive AI, from chat to Claude Code" />
+  <meta property="og:description" content="You don't need to learn to code. You need to learn to drive AI. From your first browser chat to shipping one real thing with Claude Code." />
+  <meta property="og:url" content="https://REPLACE_WITH_DOMAIN/" />
+  <!-- ASSET SPOT: drop a 1200×630 share image at assets/og-cover.png -->
+  <meta property="og:image" content="https://REPLACE_WITH_DOMAIN/assets/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zero to Shipping — Learn to drive AI, from chat to Claude Code" />
+  <meta name="twitter:description" content="From your first browser chat to shipping one real thing with Claude Code. Three programs, self-paced to 1-on-1." />
+  <meta name="twitter:image" content="https://REPLACE_WITH_DOMAIN/assets/og-cover.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Zero to Shipping",
+    "description": "Learn to drive AI — from your first browser chat to building and shipping one real thing with Claude Code.",
+    "provider": { "@type": "Organization", "name": "TG6", "url": "https://REPLACE_WITH_DOMAIN/" },
+    "offers": [
+      { "@type": "Offer", "name": "Build It", "price": "49", "priceCurrency": "USD", "category": "Self-paced" },
+      { "@type": "Offer", "name": "Ship It", "price": "499", "priceCurrency": "USD", "category": "Cohort + community" },
+      { "@type": "Offer", "name": "Get Launched", "price": "2999", "priceCurrency": "USD", "category": "1-on-1, application-based" }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -59,7 +90,9 @@
           </dl>
         </div>
         <div class="hero-art reveal">
-          <img src="assets/hero-dev.webp" width="640" height="360" alt="A person working with an AI assistant on a dark workstation lit by green terminal screens" fetchpriority="high" />
+          <!-- ASSET SPOT: drop a hero image at assets/hero-dev.webp, then restore the <img> below and delete the placeholder. -->
+          <!-- <img src="assets/hero-dev.webp" width="640" height="360" alt="A person working with an AI assistant on a dark workstation lit by green terminal screens" fetchpriority="high" /> -->
+          <div class="art-ph mono">[ HERO IMAGE<br />assets/hero-dev.webp ]</div>
         </div>
       </div>
     </div>
@@ -224,7 +257,8 @@
   </section>
 
   <section class="section cta-band">
-    <img class="bgimg" src="assets/ship-rocket.webp" alt="" aria-hidden="true" loading="lazy" />
+    <!-- ASSET SPOT: drop a background image at assets/ship-rocket.webp, then restore the <img> below. -->
+    <!-- <img class="bgimg" src="assets/ship-rocket.webp" alt="" aria-hidden="true" loading="lazy" /> -->
     <div class="scrim"></div>
     <div class="wrap">
       <h2 class="reveal">Six months from now</h2>
@@ -233,8 +267,23 @@
     </div>
   </section>
 
-  <footer class="foot">
-    <div class="wrap">Zero to Shipping &middot; a TG6 program &middot; <a class="accent" href="mailto:dvelupr@proton.me">dvelupr@proton.me</a></div>
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a class="logo" href="#top" aria-label="Zero to Shipping home">
+        <img src="assets/logo.svg" width="28" height="28" alt="" />
+        <span>Zero to <b>Shipping</b></span>
+      </a>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#pricing">Programs</a>
+        <a href="apply.html">Apply</a>
+        <a href="course/index.html">Course</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:dvelupr@proton.me">dvelupr@proton.me</a>
+      </nav>
+      <p class="footer-tag mono">// CHAT → SHIPPED.</p>
+      <p class="footer-copy">© <span id="yr">2026</span> Zero to Shipping · a TG6 program</p>
+    </div>
   </footer>
 
   <script>
@@ -260,6 +309,18 @@
     });
 
     // ── Scroll reveal (respects reduced-motion via CSS) ────────────────
+    // ── Footer year ────────────────────────────────────────────────────
+    const yr = document.getElementById("yr");
+    if (yr) yr.textContent = new Date().getFullYear();
+
+    // ── Nav blur on scroll ─────────────────────────────────────────────
+    const navEl = document.querySelector(".nav");
+    if (navEl) {
+      const onScroll = () => navEl.classList.toggle("scrolled", window.scrollY > 8);
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+    }
+
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const items = document.querySelectorAll(".reveal");
     if (reduce || !("IntersectionObserver" in window)) {
