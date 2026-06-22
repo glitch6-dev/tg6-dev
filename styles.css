@@ -344,6 +344,40 @@ details.qa .qa-body strong{color:var(--text)}
 .form-status.ok{background:#0f2419;color:#7ff0b0}
 .form-status.err{background:#2a1414;color:#f3a3a3}
 
+/* ============ DIGITAL SERVICES STOREFRONT ============ */
+.services-grid{display:grid;gap:22px;grid-template-columns:1fr;align-items:stretch;margin-top:40px}
+@media(min-width:680px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.services-grid{grid-template-columns:repeat(3,1fr)}}
+.svc{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px;display:flex;flex-direction:column;position:relative;
+  transition:transform .15s,border-color .15s,box-shadow .15s;
+}
+.svc::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;border-radius:var(--radius) var(--radius) 0 0;background:var(--sac,var(--cyan));opacity:.7}
+.svc:hover{transform:translateY(-4px);border-color:var(--sac,var(--cyan));box-shadow:0 14px 40px -18px var(--sac,var(--cyan))}
+.svc:nth-child(5n+1){--sac:var(--cyan)}
+.svc:nth-child(5n+2){--sac:var(--magenta)}
+.svc:nth-child(5n+3){--sac:var(--purple)}
+.svc:nth-child(5n+4){--sac:var(--ok)}
+.svc:nth-child(5n){--sac:var(--cyan)}
+.svc .badge-ico{margin-bottom:16px}
+.svc:hover .badge-ico{background:rgba(232,121,249,.14);color:var(--magenta);border-color:rgba(232,121,249,.25)}
+.svc h3{margin:0 0 6px;font-size:1.25rem;color:var(--sac,var(--text))}
+.svc .tagline{color:var(--muted);margin:0 0 16px;min-height:46px}
+.svc ul{list-style:none;padding:0;margin:0 0 22px;flex:1}
+.svc ul li{padding:7px 0 7px 26px;position:relative;color:var(--ink)}
+.svc ul li::before{content:"\2713";position:absolute;left:0;color:var(--ok)}
+.svc .cta{margin-top:auto}
+.svc .btn{width:100%;text-align:center}
+
+/* ============ HOW IT WORKS (3 steps) ============ */
+.steps{display:grid;gap:18px;grid-template-columns:1fr;max-width:960px;margin:36px auto 0;counter-reset:step}
+@media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px;position:relative}
+.step::before{counter-increment:step;content:"0" counter(step);font-family:var(--mono);font-size:1.6rem;color:var(--accent);display:block;margin-bottom:10px}
+.step h3{margin:0 0 6px;font-size:1.08rem}
+.step p{margin:0;color:var(--muted);font-size:.96rem}
+
 /* ============ LEGACY / MISC ============ */
 .prose{max-width:680px;margin:0 auto}
 .prose p{font-size:1.08rem;margin:0 0 18px}

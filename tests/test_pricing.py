@@ -1,8 +1,10 @@
 import re
 from pathlib import Path
 
+# Pricing tiers live on the dedicated AI Training catalogue page; index.html is
+# now the digital-services storefront.
 ROOT = Path(__file__).resolve().parents[1]
-HTML = (ROOT / "index.html").read_text(encoding="utf-8")
+HTML = (ROOT / "ai-training.html").read_text(encoding="utf-8")
 
 
 def test_all_three_prices_present():

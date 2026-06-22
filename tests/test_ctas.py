@@ -1,8 +1,10 @@
 import re
 from pathlib import Path
 
+# The AI Training catalogue (tiers + Stripe checkout) lives on its dedicated
+# page; index.html is now the digital-services storefront.
 ROOT = Path(__file__).resolve().parents[1]
-HTML = (ROOT / "index.html").read_text(encoding="utf-8")
+HTML = (ROOT / "ai-training.html").read_text(encoding="utf-8")
 
 
 def _tier_block(n):

@@ -21,11 +21,15 @@ def _serve():
 def test_pages_serve_200():
     p, port = _serve()
     try:
-        for path in ["/index.html", "/apply.html"]:
+        for path in ["/index.html", "/ai-training.html", "/apply.html"]:
             with urllib.request.urlopen(f"http://127.0.0.1:{port}{path}") as r:
                 assert r.status == 200
                 body = r.read().decode("utf-8")
                 if path == "/index.html":
+                    # index.html is the digital-services storefront
+                    assert "Digital services" in body
+                    assert "Get a quote" in body
+                if path == "/ai-training.html":
                     assert "$2,999" in body
                 if path == "/apply.html":
                     assert 'id="applyForm"' in body
