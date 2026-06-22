@@ -171,13 +171,25 @@ main,header,footer{position:relative;z-index:2}
 @keyframes aura-pulse{0%,100%{opacity:.8}50%{opacity:1}}
 @media(prefers-reduced-motion:reduce){.hero-split::after{animation:none}}
 
-/* on narrow screens the logo fills the section as a faint full-bleed backdrop */
+/* on narrow screens, mirror the desktop treatment: scale the logo up so it
+   bleeds off the top and both sides — no rectangular edges ever show — and
+   feather it to a glowing crest melting into the page, copy stacked below */
 @media(max-width:899px){
-  .hero-content{max-width:none}
-  .hero-bg{width:130%;right:-15%;opacity:.42;
-    -webkit-mask-image:radial-gradient(82% 86% at 56% 50%,#000 32%,transparent 84%);
-    mask-image:radial-gradient(82% 86% at 56% 50%,#000 32%,transparent 84%)}
-  .hero-split::after{width:80%;right:10%}
+  .hero-split{--logo:clamp(172px,52vw,250px);padding-top:clamp(20px,4vh,40px);text-align:center}
+  .hero-content{max-width:none;padding-top:calc(var(--logo) + 20px)}
+  .hero-split p.lede{margin-left:auto;margin-right:auto}
+  .hero-actions,.hero-stats{justify-content:center}
+  .hero-bg{
+    top:clamp(20px,4vh,40px);bottom:auto;left:50%;right:auto;transform:translateX(-50%);
+    height:var(--logo);width:auto;max-width:94%;
+    object-fit:contain;object-position:center;opacity:.94;
+    -webkit-mask-image:radial-gradient(78% 88% at 50% 50%,#000 60%,transparent 100%);
+    mask-image:radial-gradient(78% 88% at 50% 50%,#000 60%,transparent 100%);
+  }
+  .hero-split::after{
+    top:calc(clamp(20px,4vh,40px) + var(--logo) * .42);left:50%;right:auto;
+    transform:translate(-50%,-50%);width:min(80%,340px);
+  }
 }
 .art-ph{display:flex;align-items:center;justify-content:center;min-height:300px;border:1px dashed var(--line);border-radius:18px;background:var(--panel);color:var(--muted);font-size:.8rem;letter-spacing:1px;text-align:center;line-height:1.7;padding:24px}
 .hero-stats{display:flex;gap:36px;margin-top:36px}
