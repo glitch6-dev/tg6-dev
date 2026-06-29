@@ -44,7 +44,7 @@ of scope** for this work.
 
 Homepage service cards:
 
-1. **Website Design & Build** — e-commerce covered as a sub-point, not its own card
+1. **Website Design & Build** — **explicitly advertises E-commerce / online stores** as a named capability within this card (copy + sub-bullet), not as a separate card
 2. **SEO & Local Search**
 3. **Branding & Design**
 4. **Custom Software & Automation** — merges DS's Custom Software + Automation/Bots + Data Pipelines
@@ -53,7 +53,9 @@ Homepage service cards:
 7. **AI Training** — original offering, now one card → `ai-training.html`
 8. **Consulting**
 
-Dropped as thin/overlapping: standalone E-commerce, Database Design, Security Training.
+Dropped as thin/overlapping: Database Design, Security Training. E-commerce is
+**not** dropped — it is advertised inside the Website Design & Build card rather
+than as its own card.
 
 ## 3. Contact / lead capture
 
