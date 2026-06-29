@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://REPLACE_WITH_DOMAIN/sitemap.xml
+Sitemap: https://tg6-dev.com/sitemap.xml

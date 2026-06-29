@@ -26,17 +26,30 @@ Drop these into `assets/` and the marked spots pick them up automatically:
 
 ## Go-live checklist
 
-1. **Domain:** publish to the new domain. Add a `CNAME` file containing just the
-   bare domain (e.g. `example.com`) for GitHub Pages, then replace
-   `REPLACE_WITH_DOMAIN` in `robots.txt`, `sitemap.xml`, `index.html`,
-   `apply.html`, `privacy.html`, and `terms.html` (canonical + OG/Twitter URLs).
-2. **Apps Script:** follow `apps-script/README.md`, then paste the `/exec`
-   URL into `ENDPOINT` in `apply.html`. Tier 3 applications work after this —
-   no Stripe required.
-3. **Stripe (when Cards are activated):** create a Payment Link for Tier 1
-   ($49) and Tier 2 ($499), then paste them into `TIER1_CHECKOUT_URL` and
-   `TIER2_CHECKOUT_URL` in `index.html`. Until then the buttons show a
-   "checkout opens soon" message — Tier 3 still works.
+1. **Domain — `tg6-dev.com`:** the site targets `tg6-dev.com`. All canonical,
+   OG/Twitter, robots.txt, and sitemap URLs already contain this domain (the
+   `REPLACE_WITH_DOMAIN` placeholder has been swapped). To deploy on GitHub
+   Pages add a `CNAME` file containing just `tg6-dev.com`; point the DNS
+   A/CNAME records at GitHub's IPs, then enable GitHub Pages in the repo
+   settings.
+
+2. **Apps Script — two endpoints:**
+   - **Application form** (`apply.html`) → `apps-script/Code.gs`. Follow
+     `apps-script/README.md`, deploy as a Web App, and paste the `/exec` URL
+     into the `ENDPOINT` constant in `apply.html`. Tier 3 applications flow to
+     a Google Sheet + email after this step.
+   - **Contact form** (`contact.html`) → `apps-script/contact/Code.gs`. Deploy
+     that script separately and paste its `/exec` endpoint into `contact.html`.
+     General contact enquiries work after this step.
+
+3. **Stripe (card payments pending activation):** Stripe checkout for the AI
+   Training tiers is wired on `ai-training.html`, but card payments are still
+   pending activation in the Stripe dashboard. Once Cards are activated, create
+   Payment Links for Tier 1 ($49) and Tier 2 ($499) and paste them into
+   `TIER1_CHECKOUT_URL` and `TIER2_CHECKOUT_URL` in `ai-training.html`. Until
+   then the buttons show a "checkout opens soon" message — the Tier 3
+   application form works without Stripe.
+
 4. **Validation goal:** first paid sale (any tier) validates the offer →
    green-light full course production.
 
