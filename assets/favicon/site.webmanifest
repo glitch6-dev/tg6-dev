@@ -2,8 +2,8 @@
   "name": "TG6-Dev · AI Training",
   "short_name": "TG6-Dev",
   "icons": [
-    { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png" }
+    { "src": "/assets/favicon/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/favicon/favicon-512.png", "sizes": "512x512", "type": "image/png" }
   ],
   "theme_color": "#0a0f14",
   "background_color": "#0a0f14",
