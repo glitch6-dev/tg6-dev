@@ -2,9 +2,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-# recurring-costs.html is added in a later task; it is asserted there.
 PAGES = ["index.html", "ai-training.html", "apply.html",
-         "privacy.html", "terms.html", "404.html", "contact.html"]
+         "privacy.html", "terms.html", "404.html", "contact.html",
+         "recurring-costs.html"]
 
 
 def test_ga4_on_all_pages():
