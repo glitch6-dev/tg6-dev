@@ -30,9 +30,13 @@ def test_claude_code_named_on_landing():
     assert "claude code" in html, "the ladder must name Claude Code"
 
 
-def test_no_automation_language():
-    html = read("index.html").lower()
-    assert "automation" not in html, "automation framing was removed in the AI-training pivot"
+def test_services_catalog_present():
+    html = read("index.html")
+    # curated digital-services catalogue; AI Training is one card among many
+    assert "Custom Software" in html
+    assert "Security &amp; Pentest" in html
+    assert 'href="ai-training.html#pricing"' in html  # AI Training is one service
+    assert 'href="contact.html' in html               # CTAs route to the form
 
 
 def test_no_free_tier_language():
