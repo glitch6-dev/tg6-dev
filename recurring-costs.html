@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What It Costs to Keep Your Website Running — TG6-dev</title>
+  <meta name="description" content="A plain-English guide to the recurring costs behind any website — domain renewal, hosting, and maintenance — and exactly how TG6-dev handles them: $75/mo all-inclusive Care Plan or on-demand work from $150." />
+  <meta name="author" content="TG6-dev" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#07060c" />
+  <link rel="canonical" href="https://tg6-dev.com/recurring-costs.html" />
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BJK86RFN9N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BJK86RFN9N');
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/favicon.ico?v=3" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=3" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png?v=3" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png?v=3" />
+  <link rel="manifest" href="/assets/favicon/site.webmanifest?v=3" />
+  <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
+  <style>
+    .guide{max-width:780px;margin:0 auto;padding:clamp(2.2rem,5vw,4rem) clamp(1.2rem,4vw,3rem) 4rem}
+    .guide h1{font-weight:800;letter-spacing:-.025em;line-height:1.05;font-size:clamp(1.9rem,4.5vw,3rem);margin:.8rem 0 1rem}
+    .guide h1 .serif-italic{color:var(--accent)}
+    .guide .lede{margin-bottom:2.2rem}
+    .guide h2{font-size:1.25rem;font-weight:700;letter-spacing:-.01em;margin:2.4rem 0 .7rem}
+    .guide p,.guide li{color:var(--muted);font-size:.97rem;line-height:1.65}
+    .guide .why-list{list-style:none;padding:0;margin:.4rem 0 0;display:grid;gap:.9rem}
+    .guide .why-list li{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1rem 1.2rem}
+    .guide .why-list b{color:var(--ink);display:block;margin-bottom:.2rem}
+    .guide .costs{margin-top:1.4rem}
+    .doc-meta{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+      border-top:1px solid var(--line);margin-top:2.6rem;padding-top:1rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    .print-btn{margin-top:2rem}
+    @media print{
+      body{background:#fff;color:#111}
+      .grain,.glow,.nav,.mobile-menu,.footer,.print-btn,.costs-foot{display:none !important}
+      .guide{max-width:100%;padding:0}
+      .guide h1,.guide h2,.guide .why-list b{color:#111}
+      .guide h1 .serif-italic,.kicker{color:#3f6212}
+      .guide p,.guide li,.lede{color:#333}
+      .costs,.cost-col,.guide .why-list li{background:#fff;border-color:#ccc}
+      .cost-col.featured{background:#f4f9e8}
+      .cost-price{color:#111}
+      .cost-list li,.cost-list.dim li{color:#333}
+      .cost-list li::before{color:#3f6212}
+      .cost-note,.doc-meta{color:#666;border-color:#ccc}
+      .cost-label{color:#666}
+      .cost-col.featured .cost-label{color:#3f6212}
+      a{color:#111;text-decoration:none}
+    }
+  </style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="glow" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="TG6-Dev home">
+      <img src="assets/IMG_4457.jpeg" width="73" height="40" alt="TG6-Dev" />
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Services</a>
+      <a href="ai-training.html#pricing">AI Training</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    <span class="status-dot">READY</span>
+    <a class="btn btn-accent nav-cta" href="contact.html">Start a project →</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="index.html">Services</a>
+  <a href="ai-training.html#pricing">AI Training</a>
+  <a href="contact.html">Contact</a>
+  <a href="privacy.html">Privacy</a>
+  <a href="terms.html">Terms</a>
+  <a class="btn btn-accent" href="contact.html">Start a project →</a>
+</div>
+
+<main>
+  <article class="guide">
+    <p class="kicker">// Client guide</p>
+    <h1>What it costs to keep your website <span class="serif-italic">running.</span></h1>
+    <p class="lede">Building the site is a one-time cost. Keeping it online is not — and most agencies don't tell you that until the first surprise bill. This page is the whole picture, in plain English.</p>
+
+    <h2>Why does a website have ongoing costs?</h2>
+    <ul class="why-list">
+      <li><b>Domain name — renews every year.</b> Your address on the internet (like <em>yourbusiness.com</em>) is rented, not bought. It renews annually — typically around $20/yr — and if it lapses, your site and email go dark and someone else can take the name.</li>
+      <li><b>Hosting — keeps the site online.</b> Your website's files live on a server that runs 24/7. That server space is a recurring cost, monthly or yearly depending on the provider.</li>
+      <li><b>Maintenance — keeps it fast and safe.</b> Software ages: security patches, browser changes, content updates. An unmaintained site gets slower, breaks quietly, and becomes a target.</li>
+    </ul>
+
+    <h2>How I handle it — two options</h2>
+    <div class="costs">
+      <div class="costs-grid">
+        <div class="cost-col featured">
+          <p class="cost-label">Option 1 · Care Plan</p>
+          <p class="cost-price">$75<span>/mo · all-inclusive</span></p>
+          <ul class="cost-list">
+            <li>Domain renewal — covered</li>
+            <li>Hosting — covered</li>
+            <li>Security updates &amp; monitoring</li>
+            <li>Small content edits, included</li>
+          </ul>
+          <p class="cost-note">One predictable bill covers everything above. No renewal notices, no surprise invoices — ever. Larger sites quoted up front.</p>
+        </div>
+        <div class="cost-col">
+          <p class="cost-label">Option 2 · On-demand</p>
+          <p class="cost-price">$150<span>+ per request</span></p>
+          <ul class="cost-list dim">
+            <li>Fixes &amp; updates scoped and quoted per job</li>
+            <li>You renew your own domain (≈ $20/yr, paid to the registrar)</li>
+            <li>You manage your own hosting account</li>
+          </ul>
+          <p class="cost-note">Full handover at launch — you own every account and maintain the site yourself, calling me only when something needs doing.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>When do the fees hit?</h2>
+    <p>On a Care Plan: the same amount, every month — that's it. On-demand: your domain renews once a year (your registrar emails you), hosting bills on whatever cycle your provider uses, and my work is invoiced per job after you approve the quote. Either way, nothing is charged without you knowing exactly what and why.</p>
+
+    <a class="btn btn-accent print-btn" href="contact.html">Questions? Ask me →</a>
+
+    <div class="doc-meta">
+      <span>TG6-dev · Build it. Secure it. Rank it.</span>
+      <span>tg6-dev.com</span>
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <a class="logo" href="index.html" aria-label="TG6-Dev home">
+      <img src="assets/IMG_4457.jpeg" width="73" height="40" alt="TG6-Dev" />
+    </a>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="index.html">Services</a>
+      <a href="ai-training.html#pricing">AI Training</a>
+      <a href="recurring-costs.html">Recurring costs</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="mailto:dvelupr@proton.me">dvelupr@proton.me</a>
+    </nav>
+    <p class="footer-tag mono">// BUILD. SECURE. RANK.</p>
+    <p class="footer-copy">© <span id="yr">2026</span> TG6-Dev · Built &amp; secured by one engineer.</p>
+  </div>
+</footer>
+
+<script>
+  // ── Footer year ────────────────────────────────────────────────────
+  const yr = document.getElementById("yr");
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  // ── Mobile menu ────────────────────────────────────────────────────
+  const navToggle = document.getElementById("navToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  if (navToggle && mobileMenu) {
+    const setMenu = (open) => {
+      mobileMenu.classList.toggle("open", open);
+      navToggle.setAttribute("aria-expanded", String(open));
+      mobileMenu.setAttribute("aria-hidden", String(!open));
+      document.body.style.overflow = open ? "hidden" : "";
+    };
+    navToggle.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
+    mobileMenu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+    window.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
+  }
+
+  // ── Nav blur on scroll ─────────────────────────────────────────────
+  const navEl = document.querySelector(".nav");
+  if (navEl) {
+    const onScroll = () => navEl.classList.toggle("scrolled", window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  // ── Reveal on scroll ──────────────────────────────────────────────
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const items = document.querySelectorAll(".reveal");
+  if (reduce || !("IntersectionObserver" in window)) {
+    items.forEach((el) => el.classList.add("in"));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    items.forEach((el) => io.observe(el));
+  }
+</script>
+</body>
+</html>
