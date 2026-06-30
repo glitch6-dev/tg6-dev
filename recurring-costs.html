@@ -7,9 +7,8 @@
   <meta name="description" content="A plain-English guide to the recurring costs behind any website — domain renewal, hosting, and maintenance — and exactly how TG6-dev handles them: $75/mo all-inclusive Care Plan or on-demand work from $150." />
   <meta name="author" content="TG6-dev" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#080b09" />
+  <meta name="theme-color" content="#07060c" />
   <link rel="canonical" href="https://tg6-dev.com/recurring-costs.html" />
-  <link rel="icon" href="favicon.ico" />
 
   <!-- Google Analytics (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BJK86RFN9N"></script>
@@ -23,8 +22,14 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/favicon.ico?v=3" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=3" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png?v=3" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png?v=3" />
+  <link rel="manifest" href="/assets/favicon/site.webmanifest?v=3" />
+  <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
   <style>
     .guide{max-width:780px;margin:0 auto;padding:clamp(2.2rem,5vw,4rem) clamp(1.2rem,4vw,3rem) 4rem}
     .guide h1{font-weight:800;letter-spacing:-.025em;line-height:1.05;font-size:clamp(1.9rem,4.5vw,3rem);margin:.8rem 0 1rem}
@@ -33,11 +38,11 @@
     .guide h2{font-size:1.25rem;font-weight:700;letter-spacing:-.01em;margin:2.4rem 0 .7rem}
     .guide p,.guide li{color:var(--muted);font-size:.97rem;line-height:1.65}
     .guide .why-list{list-style:none;padding:0;margin:.4rem 0 0;display:grid;gap:.9rem}
-    .guide .why-list li{background:var(--panel);border:1px solid var(--line-2);border-radius:14px;padding:1rem 1.2rem}
+    .guide .why-list li{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1rem 1.2rem}
     .guide .why-list b{color:var(--ink);display:block;margin-bottom:.2rem}
     .guide .costs{margin-top:1.4rem}
-    .doc-meta{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2);
-      border-top:1px solid var(--line-2);margin-top:2.6rem;padding-top:1rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    .doc-meta{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+      border-top:1px solid var(--line);margin-top:2.6rem;padding-top:1rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
     .print-btn{margin-top:2rem}
     @media print{
       body{background:#fff;color:#111}
@@ -64,20 +69,33 @@
 <div class="glow" aria-hidden="true"></div>
 
 <!-- NAV -->
-<header class="nav" id="top">
-  <a class="brand" href="index.html" aria-label="TG6-dev home">
-    <span class="brand-mark" aria-hidden="true">
-      <svg viewBox="0 0 36 36" width="26" height="26"><rect x="1.5" y="1.5" width="33" height="33" rx="9" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M11 13l5 5-5 5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 24h7" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
-    </span>
-    <span class="brand-text">TG6<em>·dev</em></span>
-  </a>
-  <nav class="nav-links" aria-label="Primary">
-    <a href="index.html#services">Services</a>
-    <a href="index.html#process">Process</a>
-    <a href="index.html#why">About</a>
-  </nav>
-  <a class="btn btn-accent nav-cta" href="contact.html">Start a project →</a>
-</header>
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="TG6-Dev home">
+      <img src="assets/IMG_4457.jpeg" width="73" height="40" alt="TG6-Dev" />
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Services</a>
+      <a href="ai-training.html#pricing">AI Training</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    <span class="status-dot">READY</span>
+    <a class="btn btn-accent nav-cta" href="contact.html">Start a project →</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="index.html">Services</a>
+  <a href="ai-training.html#pricing">AI Training</a>
+  <a href="contact.html">Contact</a>
+  <a href="privacy.html">Privacy</a>
+  <a href="terms.html">Terms</a>
+  <a class="btn btn-accent" href="contact.html">Start a project →</a>
+</div>
 
 <main>
   <article class="guide">
@@ -132,20 +150,65 @@
 </main>
 
 <footer class="footer">
-  <div class="foot-brand">
-    <span class="brand-mark" aria-hidden="true">
-      <svg viewBox="0 0 36 36" width="22" height="22"><rect x="1.5" y="1.5" width="33" height="33" rx="9" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M11 13l5 5-5 5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 24h7" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
-    </span>
-    TG6·dev
+  <div class="wrap footer-inner">
+    <a class="logo" href="index.html" aria-label="TG6-Dev home">
+      <img src="assets/IMG_4457.jpeg" width="73" height="40" alt="TG6-Dev" />
+    </a>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="index.html">Services</a>
+      <a href="ai-training.html#pricing">AI Training</a>
+      <a href="recurring-costs.html">Recurring costs</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="mailto:dvelupr@proton.me">dvelupr@proton.me</a>
+    </nav>
+    <p class="footer-tag mono">// BUILD. SECURE. RANK.</p>
+    <p class="footer-copy">© <span id="yr">2026</span> TG6-Dev · Built &amp; secured by one engineer.</p>
   </div>
-  <p class="foot-meta">Build it. Secure it. Rank it. · Remote, worldwide</p>
-  <div class="foot-links">
-    <a href="index.html#services">Services</a>
-    <a href="https://github.com/glitch6-dev" target="_blank" rel="noopener">GitHub ↗</a>
-    <a href="contact.html">Contact</a>
-  </div>
-  <p class="foot-copy">© <span id="yr">2026</span> TG6-dev · Built &amp; secured by one engineer.</p>
 </footer>
 
+<script>
+  // ── Footer year ────────────────────────────────────────────────────
+  const yr = document.getElementById("yr");
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  // ── Mobile menu ────────────────────────────────────────────────────
+  const navToggle = document.getElementById("navToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  if (navToggle && mobileMenu) {
+    const setMenu = (open) => {
+      mobileMenu.classList.toggle("open", open);
+      navToggle.setAttribute("aria-expanded", String(open));
+      mobileMenu.setAttribute("aria-hidden", String(!open));
+      document.body.style.overflow = open ? "hidden" : "";
+    };
+    navToggle.addEventListener("click", () => setMenu(!mobileMenu.classList.contains("open")));
+    mobileMenu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+    window.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
+  }
+
+  // ── Nav blur on scroll ─────────────────────────────────────────────
+  const navEl = document.querySelector(".nav");
+  if (navEl) {
+    const onScroll = () => navEl.classList.toggle("scrolled", window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  // ── Reveal on scroll ──────────────────────────────────────────────
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const items = document.querySelectorAll(".reveal");
+  if (reduce || !("IntersectionObserver" in window)) {
+    items.forEach((el) => el.classList.add("in"));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    items.forEach((el) => io.observe(el));
+  }
+</script>
 </body>
 </html>

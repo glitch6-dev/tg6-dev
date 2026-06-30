@@ -306,7 +306,7 @@ def gen_og():
     # subtitle + url
     d.text((px(x), px(y + 3 * lh + 6)), "Full-stack development · Security · SEO · AI",
            font=_bf("JetBrainsMono.ttf", 21, 500), fill=MUTED)
-    d.text((px(x), px(OH - 56)), "glitch6-dev.github.io/DigitalServices",
+    d.text((px(x), px(OH - 56)), "tg6-dev.com",
            font=_bf("JetBrainsMono.ttf", 18, 500), fill=DIM)
 
     img = img.resize((OW, OH), Image.LANCZOS)
