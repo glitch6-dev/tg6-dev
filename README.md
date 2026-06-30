@@ -1,13 +1,17 @@
-# TG6-Dev · AI Training — course sales site
+# TG6-Dev · Digital Services — site
 
-Static three-tier sales site for the *TG6-Dev · AI Training* program — learn to drive AI, from your first browser chat to building and shipping real things with Claude Code.
+Static digital-services site for **TG6-Dev** — websites & online stores, SEO, branding, custom software & automation, security/pentest, AI training, and consulting, built and shipped by one engineer. Domain: `tg6-dev.com`.
 
-- `index.html` — landing + pricing (Build It $49 / Ship It $499 / Get Launched $2,999)
-- `apply.html` — Tier 3 application form (posts to Apps Script)
+- `index.html` — digital-services storefront (8-service catalog + proof), with AI Training as one service card
+- `contact.html` — general "get a quote" contact form (posts to Apps Script → Leads sheet + email)
+- `ai-training.html` — AI Training programs + pricing (Build It $49 / Ship It $499 / Get Launched $2,999)
+- `apply.html` — AI Training Tier 3 application form (posts to Apps Script)
+- `recurring-costs.html` — hosting / running-cost transparency page
 - `privacy.html` / `terms.html` — legal pages
 - `404.html` — not-found page (uses root-absolute paths; serve at domain root)
 - `course/` — self-paced course dashboard + lesson reader (data-driven)
-- `apps-script/` — application backend (Sheet + email)
+- `apps-script/` — application backend (`Code.gs`) + contact backend (`contact/Code.gs`)
+- `tools/` — asset-generation tooling (`gen_assets.py` + fonts)
 - `styles.css` — shared design system (glitch editorial + telemetry)
 
 ## Assets to upload (placeholders left in place)
